@@ -8,6 +8,15 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ListOfDoctorsComponent } from './list-of-doctors/list-of-doctors.component';
 
+const appRoutes: Routes = [
+  { path: 'list-of-doctors', component: ListOfDoctorsComponent },
+  {path: 'main-footer', component: MainFooterComponent },
+  { path: '',
+    redirectTo: '/main-header',
+    pathMatch: 'full'
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +26,11 @@ import { ListOfDoctorsComponent } from './list-of-doctors/list-of-doctors.compon
     ListOfDoctorsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

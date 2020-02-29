@@ -8,9 +8,10 @@ import {MainHeaderComponent} from './main-header/main-header.component';
 import {MainFooterComponent} from './main-footer/main-footer.component';
 import {ListOfDoctorsComponent} from './list-of-doctors/list-of-doctors.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
@@ -43,7 +44,12 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

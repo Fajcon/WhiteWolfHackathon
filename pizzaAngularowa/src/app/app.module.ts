@@ -8,10 +8,9 @@ import {MainHeaderComponent} from './main-header/main-header.component';
 import {MainFooterComponent} from './main-footer/main-footer.component';
 import {ListOfDoctorsComponent} from './list-of-doctors/list-of-doctors.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
-import {MatCardModule} from '@angular/material/typings/esm5/card';
 
 const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
@@ -34,19 +33,19 @@ const appRoutes: Routes = [
     ListOfDoctorsComponent,
     ChatComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(
-            appRoutes,
-            {enableTracing: true} // <-- debugging purposes only
-        ),
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        FlexLayoutModule,
-        MatCardModule
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(
+      appRoutes,
+      {enableTracing: true} // <-- debugging purposes only
+    ),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatCardModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

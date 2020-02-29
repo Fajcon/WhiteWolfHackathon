@@ -1,3 +1,7 @@
-<app-main-header></app-main-header>
-<router-outlet></router-outlet>
-<app-main-footer class = "footer"></app-main-footer>
+<div fxLayout="column" fxFlexFill>
+  <app-main-header></app-main-header>
+  <div fxFlex class="wrapper">
+    <router-outlet></router-outlet>
+  </div>
+  <app-main-footer></app-main-footer>
+</div>

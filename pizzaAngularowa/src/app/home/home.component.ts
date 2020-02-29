@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {FindDoktorModalComponent} from './find-doktor-modal/find-doktor-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) {
+  }
+
+  generateReportPopUp(): void {
+    const dialogRef = this.dialog.open(FindDoktorModalComponent, {
+      width: '500px',
+      data: 'cos'
+    });
+  }
+
 
   ngOnInit() {
   }
-
 }

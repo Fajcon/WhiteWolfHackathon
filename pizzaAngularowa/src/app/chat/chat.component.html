@@ -1,1 +1,19 @@
-<p>chat works!</p>
+<div fxLayout="column" fxLayoutAlign="space-around center">
+  <ul class = "chatList">
+    <li *ngFor="let message of messages">
+      {{message}}
+    </li>
+  </ul>
+  <div>
+    <mat-form-field>
+      <mat-label>Autosize textarea</mat-label>
+      <textarea matInput name="inputMessage" [(ngModel)]="chatMessage" (keyup.enter)="sendMessage(chatMessage)"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="sendMessage(chatMessage)" mat-dialog-close>Wyślij</button>
+  </div>
+</div>
+

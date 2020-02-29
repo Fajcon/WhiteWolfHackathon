@@ -1,21 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { MainHeaderComponent } from './main-header/main-header.component';
-import { MainFooterComponent } from './main-footer/main-footer.component';
-import { ListOfDoctorsComponent } from './list-of-doctors/list-of-doctors.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {HomeComponent} from './home/home.component';
+import {MainHeaderComponent} from './main-header/main-header.component';
+import {MainFooterComponent} from './main-footer/main-footer.component';
+import {ListOfDoctorsComponent} from './list-of-doctors/list-of-doctors.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatIconModule, MatToolbarModule} from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ChatComponent} from './chat/chat.component';
 
 const appRoutes: Routes = [
-  { path: 'list-of-doctors', component: ListOfDoctorsComponent },
-  {path: 'main-footer', component: MainFooterComponent },
-  { path: '',
-    redirectTo: '/main-header',
+  {path: 'list-of-doctors', component: ListOfDoctorsComponent},
+  {path: 'main-footer', component: MainFooterComponent},
+  {path: 'chat', component: ChatComponent},
+  {path: 'home', component: HomeComponent},
+  {
+    path: '',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
@@ -26,7 +30,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MainHeaderComponent,
     MainFooterComponent,
-    ListOfDoctorsComponent
+    ListOfDoctorsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -43,4 +48,5 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

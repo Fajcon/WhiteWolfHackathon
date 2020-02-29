@@ -8,9 +8,13 @@ import {MainHeaderComponent} from './main-header/main-header.component';
 import {MainFooterComponent} from './main-footer/main-footer.component';
 import {ListOfDoctorsComponent} from './list-of-doctors/list-of-doctors.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatRadioModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
+import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-modal.component';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
@@ -31,7 +35,8 @@ const appRoutes: Routes = [
     MainHeaderComponent,
     MainFooterComponent,
     ListOfDoctorsComponent,
-    ChatComponent
+    ChatComponent,
+    FindDoktorModalComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +50,19 @@ const appRoutes: Routes = [
     MatButtonModule,
     FlexLayoutModule,
     MatCardModule,
+    MatDialogModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+  ],
+  entryComponents: [FindDoktorModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

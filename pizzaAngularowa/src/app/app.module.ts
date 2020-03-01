@@ -16,12 +16,14 @@ import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-m
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LogInComponent} from './main-header/log-in/log-in.component';
 
 const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
   {path: 'main-footer', component: MainFooterComponent},
   {path: 'chat', component: ChatComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'doctor', component: DoctorComponent},
   {
     path: '',
     redirectTo: '/home',
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     ListOfDoctorsComponent,
     ChatComponent,
     FindDoktorModalComponent,
-    DoctorComponent
+    DoctorComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,7 @@ const appRoutes: Routes = [
       useValue: {}
     },
   ],
-  entryComponents: [FindDoktorModalComponent],
+  entryComponents: [FindDoktorModalComponent, LogInComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

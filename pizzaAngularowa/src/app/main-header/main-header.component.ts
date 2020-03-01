@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import {DoctorComponent} from '../doctor/doctor.component';
+import {LogInComponent} from './log-in/log-in.component';
 
 @Component({
   selector: 'app-main-header',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit() {
   }
 
+  logIn() {
+    const dialogRef = this.dialog.open(LogInComponent, {
+      width: '500px',
+      data: 'cos'
+    });
+  }
 }

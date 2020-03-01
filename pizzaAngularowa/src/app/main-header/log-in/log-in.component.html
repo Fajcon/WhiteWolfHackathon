@@ -1,0 +1,18 @@
+<div fxLayout="column" fxLayoutAlign="space-between none">
+    <h1 mat-dialog-title fxFlexAlign="center">Zaloguj się</h1>
+    <mat-form-field class="example-full-width">
+      <mat-label>Login</mat-label>
+      <label>
+        <input matInput>
+      </label>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Hasło</mat-label>
+      <label>
+        <input type="password" matInput>
+      </label>
+    </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click) = submit() routerLink="/doctor">Zaloguj się</button>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
+import {Message} from '../data/message';
 
 @Component({
   selector: 'app-chat',
@@ -11,10 +12,12 @@ import {take} from 'rxjs/operators';
 })
 export class ChatComponent {
 
+
   private stompClient;
   private value = '';
   private chatMessage = '';
   messages = [];
+  container: any;
 
   constructor(private _ngZone: NgZone) {
     this.initializeWebSocketConnection();
@@ -29,15 +32,24 @@ export class ChatComponent {
       that.stompClient.subscribe('secured/user/queue/specific-user' + '-user' + sessionId, (message) => {
         if (message.body) {
           console.log(message.body);
+          // TODO dodaj obiekt do listy i tyle
         }
       });
     });
   }
 
   sendMessage(message) {
-    this.messages.push(message);
-    this.stompClient.send('secured/user/queue/specific-user' , {}, message);
-    this.chatMessage = '';
+    if( message.length > 0){
+      this.messages.push(new Message(true, message));
+      console.log(this.messages);
+      this.stompClient.send('secured/user/queue/specific-user', {}, message);
+      this.chatMessage = '';
+      this.messages.push(new Message(false, message));
+      this.container = document.getElementById('xxx');
+      this.container.scrollTop = this.container.scrollHeight;
+    }
   }
 
 }
+
+

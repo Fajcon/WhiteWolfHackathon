@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ConversationServices} from '../services/conversationServices';
 import {ActivatedRoute} from '@angular/router';
+import {Conv} from '../data/conv';
 
 @Component({
   selector: 'app-chat-doctor',
@@ -14,14 +15,16 @@ export class ChatDoctorComponent  {
   messages = [];
   private id: string;
   private sentByDoctor = true;
+  private animals;
 
   constructor(private conversationServices: ConversationServices, private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
       if (!this.id) {
         conversationServices.getNewConversationId().subscribe(
-          id => {
-            this.id = id;
+          ob => {
+            this.id = ob.id + '';
+            this.animals = ob.name;
             this.getMessages(this.id);
           });
       }

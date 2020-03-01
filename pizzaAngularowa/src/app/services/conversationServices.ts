@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {Conv} from '../data/conv';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,9 @@ export class ConversationServices {
       .pipe(
       );
   }
-  getNewConversationId(): Observable<string> {
+  getNewConversationId(): Observable<Conv> {
     const url = this.newConversationId;
-    return this.httpClient.get<string>(url)
+    return this.httpClient.get<Conv>(url)
       .pipe(
       );
   }

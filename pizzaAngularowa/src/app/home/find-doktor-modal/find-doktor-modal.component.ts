@@ -17,7 +17,7 @@ export class FindDoktorModalComponent implements OnInit {
   }
 
   submit(): void {
-    this.conversationServices.getChatMessages(this.doctorId).subscribe();
+    // this.conversationServices.getChatMessages(this.doctorId).subscribe();
     this.dialogRef.close();
   }
 }

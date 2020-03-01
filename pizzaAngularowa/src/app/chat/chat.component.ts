@@ -14,14 +14,16 @@ export class ChatComponent {
   messages = [];
   private id: string;
   private sentByDoctor = false;
+  twojeHaslo: string;
 
   constructor(private conversationServices: ConversationServices, private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
       if (!this.id) {
         conversationServices.getNewConversationId().subscribe(
-          id => {
-            this.id = id;
+          ob => {
+            this.id = ob.id + '';
+            this.twojeHaslo = ob.name;
             this.getMessages(this.id);
           });
         }

@@ -11,7 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
 import {DoctorComponent} from './doctor/doctor.component';
-import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-modal.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
@@ -64,7 +64,8 @@ const appRoutes: Routes = [
     MatDialogModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [
     {

@@ -5,23 +5,109 @@ import org.hibernate.id.enhanced.SequenceStyleGenerator;
 import java.util.List;
 
 public class NiceIdGenerator {
-    List<String> przymiotniki = List.of();
-    List<String> animals = List.of(
-            "Mis",
-            "Pies",
-            "Kot",
-            "Zaba",
-            "Pszczola",
-            "Krolik",
-            "Malpa"
+    public static final List<String> animals = List.of(
+            "alabastrowy",
+            "bialy",
+            "kremowy",
+            "perlowy",
+            "porcelanowy",
+            "lososiowy",
+            "majtkowy",
+            "majerankowy",
+            "malinowy",
+            "rozowy",
+            "rubinowy",
+            "amarantowy",
+            "bordowy",
+            "ceglasty",
+            "czerwony",
+            "cynobrowy",
+            "burgundowy",
+            "karmazynowy",
+            "poziomkowy",
+            "rdzawy",
+            "szkarlatny",
+            "brazowy",
+            "bursztynowy",
+            "miedziany",
+            "zlocisty",
+            "pomaranczowy",
+            "brunatny",
+            "hebanowy",
+            "kakaowy",
+            "mahoniowy",
+            "tabaczkowy",
+            "bananowy",
+            "kanarkowy",
+            "jasnozolty",
+            "szafranowy",
+            "siwy",
+            "popielaty",
+            "srebrny",
+            "antracytowy",
+            "malachitowy",
+            "mietowy",
+            "oliwkowy",
+            "pistacjowy",
+            "zielony",
+            "indygo",
+            "szafirowy",
+            "ametystowy",
+            "wrzosowy",
+            "purpurowy",
+            "blekitny"
     );
-    List<String> colors = List.of(
-            "Bialy",
-            "Czerwony",
-            "Zielony",
-            "Pomaranczowy",
-            "Rozowy",
-            ""
+    public static final List<String> colors = List.of(
+            "aligator",
+            "borsuk",
+            "nietoperz",
+            "bobr",
+            "bawol",
+            "wielblad",
+            "kameleon",
+            "gepard",
+            "wiewiorka",
+            "chupacabra",
+            "kojot",
+            "dinozaur",
+            "pies",
+            "delfin",
+            "smok",
+            "kaczka",
+            "osmiornica",
+            "slon",
+            "lis",
+            "zaba",
+            "zyrafa",
+            "grizzly",
+            "jez",
+            "hipopotam",
+            "hiena",
+            "iguana",
+            "koala",
+            "kraken",
+            "lemur",
+            "lampart",
+            "Lew",
+            "lama",
+            "malpa",
+            "nyan cat",
+            "orangutan",
+            "panda",
+            "pingwin",
+            "pyton",
+            "krolik",
+            "nosorozec",
+            "owca",
+            "skunks",
+            "wiewiorka",
+            "tygrys",
+            "zolw",
+            "jednorozec",
+            "mors",
+            "wilk",
+            "rosomak",
+            "wombat"
     );
 
     public static Long toLong(String chatId) {
@@ -29,6 +115,8 @@ public class NiceIdGenerator {
     }
 
     public static String toNice(Long id){
-        return null;
+        int row = (int) (id%animals.size());
+        int column = (int) ((id/animals.size())%colors.size());
+        return colors.get(column) + animals.get(row);
     }
 }

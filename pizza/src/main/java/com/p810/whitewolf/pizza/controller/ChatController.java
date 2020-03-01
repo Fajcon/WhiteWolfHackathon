@@ -6,11 +6,18 @@ import com.p810.whitewolf.pizza.repositories.ChatRepository;
 import com.p810.whitewolf.pizza.repositories.DoctorRepository;
 import com.p810.whitewolf.pizza.repositories.MessageRepository;
 import com.p810.whitewolf.pizza.responses.AllChatsResponse;
+import com.p810.whitewolf.pizza.responses.MessagesResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@CrossOrigin("*")
 @RestController
 public class ChatController {
     private DoctorRepository doctorRepository;
@@ -35,8 +42,19 @@ public class ChatController {
                 .orElseThrow());
     }
 
+    @GetMapping("/chatMessages/{chatId}")
+    List<MessagesResponse> messegesForChat(@PathVariable(name = "chatId") String chatId){
+        return chatRepository.findById(chatId)
+                .orElseThrow()
+                .getMessages()
+                .stream()
+                .sorted(Comparator.comparing(ChatMessage::getTimestamp))
+                .map(MessagesResponse::new)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/chat/new")
-    Chat newChat() {
-        return chatRepository.save(new Chat());
+    Long newChat() {
+        return chatRepository.save(new Chat()).getChatId();
     }
 }

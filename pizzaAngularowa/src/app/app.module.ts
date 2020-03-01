@@ -22,6 +22,7 @@ const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
   {path: 'main-footer', component: MainFooterComponent},
   {path: 'chat', component: ChatComponent},
+  {path: 'chat/:id', component: ChatComponent},
   {path: 'home', component: HomeComponent},
   {path: 'doctor', component: DoctorComponent},
   {

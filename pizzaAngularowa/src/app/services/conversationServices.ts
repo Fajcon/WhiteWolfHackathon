@@ -10,10 +10,17 @@ export class ConversationServices {
   constructor(private httpClient: HttpClient) {
   }
 
-  private getConversationIdUrl = 'http://localhost:8080/getConversationId/';
+  private getChatMessagesUrl = 'http://localhost:8080/chatMessages/';
+  private newConversationId = 'http://localhost:8080/chat/new';
 
-  getConversationId(doctorId: string): Observable<string> {
-    const url = this.getConversationIdUrl + doctorId;
+  getChatMessages(id: string): Observable<string> {
+    const url = this.getChatMessagesUrl + id;
+    return this.httpClient.get<string>(url)
+      .pipe(
+      );
+  }
+  getNewConversationId(): Observable<string> {
+    const url = this.newConversationId;
     return this.httpClient.get<string>(url)
       .pipe(
       );

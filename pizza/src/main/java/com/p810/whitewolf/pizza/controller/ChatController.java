@@ -2,10 +2,12 @@ package com.p810.whitewolf.pizza.controller;
 
 import com.p810.whitewolf.pizza.config.NiceIdGenerator;
 import com.p810.whitewolf.pizza.model.Chat;
+import com.p810.whitewolf.pizza.model.ChatMessage;
 import com.p810.whitewolf.pizza.repositories.ChatRepository;
 import com.p810.whitewolf.pizza.repositories.DoctorRepository;
 import com.p810.whitewolf.pizza.repositories.MessageRepository;
 import com.p810.whitewolf.pizza.responses.AllChatsResponse;
+import com.p810.whitewolf.pizza.responses.ChatNameAndId;
 import com.p810.whitewolf.pizza.responses.ChatResponse;
 import com.p810.whitewolf.pizza.responses.MessagesResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +58,9 @@ public class ChatController {
     }
 
     @GetMapping("/chat/new")
-    Long newChat() {
-        return chatRepository.save(new Chat()).getChatId();
+    ChatNameAndId newChat() {
+        Chat newchat = chatRepository.save(new Chat());
+        return new ChatNameAndId(NiceIdGenerator.toNice(newchat.getChatId()), newchat.getChatId());
     }
 
     @GetMapping("/addMessage/{message}&{conversationId}&{sentByDoctor}")

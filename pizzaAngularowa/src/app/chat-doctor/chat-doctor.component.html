@@ -1,11 +1,11 @@
 
 <div class="messageContainer" id="xxx" fxLayout="column" >
-<!--  fxLayoutAlign="space-around center"-->
+  <!--  fxLayoutAlign="space-around center"-->
   <ul class = "chatList">
     <li *ngFor="let message of messages">
       <br/>
-      <div *ngIf="!message.sentByDoctor"><div class="messageBox"><div class="userMessageBox">{{message.body}}</div></div></div>
-      <div *ngIf="message.sentByDoctor"><div class="messageBox"><div class="serverMessageBox">{{message.body}}</div></div></div>
+      <div *ngIf="message.sentByDoctor"><div class="messageBox"><div class="userMessageBox">{{message.body}}</div></div></div>
+      <div *ngIf="!message.sentByDoctor"><div class="messageBox"><div class="serverMessageBox">{{message.body}}</div></div></div>
     </li>
   </ul>
   <div class="writeMessage">
@@ -20,10 +20,10 @@
                 cdkAutosizeMaxRows="5"></textarea></div>
     </mat-form-field>
     <div style="display: inline-block">
-    <button  style="margin-left: 25%; word-wrap: break-word; margin-right: 5%" fxLayout="column" mat-raised-button
-             color="primary"
-            (click)="sendMessage(chatMessage)"
-            mat-dialog-close>Wyślij</button>
+      <button  style="margin-left: 25%; word-wrap: break-word; margin-right: 5%" fxLayout="column" mat-raised-button
+               color="primary"
+               (click)="sendMessage(chatMessage)"
+               mat-dialog-close>Wyślij</button>
     </div>
   </div>
 </div>

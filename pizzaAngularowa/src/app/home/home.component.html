@@ -2,7 +2,7 @@
   <div fxFlex="30" fxLayout="column" fxLayoutAlign="space-around">
     <div fxLayout="column" fxLayoutAlign="space-between start">
       <a mat-raised-button color="primary" (click)="generateReportPopUp()" >Zapytaj specjaliste</a>
-      <a mat-raised-button color="primary" routerLink="/chat" routerLinkActive="active">Chat</a>
+      <a mat-raised-button color="primary" (click)="continueConversationPopUp()" routerLinkActive="active">Chat</a>
       <a mat-raised-button color="primary" routerLink="/list-of-doctors" routerLinkActive="active">Lista naszych specjalistów</a>
     </div>
   </div>

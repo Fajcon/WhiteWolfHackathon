@@ -9,7 +9,6 @@ import {ConversationServices} from '../../services/conversationServices';
 })
 export class FindDoktorModalComponent implements OnInit {
   askDoctor: any;
-
   constructor(public dialogRef: MatDialogRef<FindDoktorModalComponent>, @Inject(MAT_DIALOG_DATA) public doctorId: string,
               private conversationServices: ConversationServices) {
   }
@@ -18,7 +17,7 @@ export class FindDoktorModalComponent implements OnInit {
   }
 
   submit(): void {
-    this.conversationServices.getConversationId(this.doctorId).subscribe();
+    this.conversationServices.getChatMessages(this.doctorId).subscribe();
     this.dialogRef.close();
   }
 }

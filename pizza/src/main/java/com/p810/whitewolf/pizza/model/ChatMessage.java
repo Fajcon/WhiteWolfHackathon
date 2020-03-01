@@ -19,4 +19,11 @@ public class ChatMessage {
     private String body;
     private Timestamp timestamp;
     private boolean sentByDoctor;
+
+    public ChatMessage(Chat chat, String message, Timestamp timestamp, Boolean sentByDoctor) {
+        this.chat = chat;
+        this.body = message;
+        this.timestamp = timestamp;
+        this.sentByDoctor = sentByDoctor;
+    }
 }

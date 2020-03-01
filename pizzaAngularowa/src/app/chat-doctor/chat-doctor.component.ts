@@ -1,19 +1,19 @@
-import {Component, NgZone, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ConversationServices} from '../services/conversationServices';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  selector: 'app-chat-doctor',
+  templateUrl: './chat-doctor.component.html',
+  styleUrls: ['./chat-doctor.component.css']
 })
-export class ChatComponent {
+export class ChatDoctorComponent  {
 
   private value = '';
   private chatMessage = '';
   messages = [];
   private id: string;
-  private sentByDoctor = false;
+  private sentByDoctor = true;
 
   constructor(private conversationServices: ConversationServices, private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
@@ -24,7 +24,7 @@ export class ChatComponent {
             this.id = id;
             this.getMessages(this.id);
           });
-        }
+      }
       this.getMessages(this.id);
     });
   }

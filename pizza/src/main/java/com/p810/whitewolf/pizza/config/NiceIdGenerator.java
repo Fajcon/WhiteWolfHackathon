@@ -5,7 +5,7 @@ import org.hibernate.id.enhanced.SequenceStyleGenerator;
 import java.util.List;
 
 public class NiceIdGenerator {
-    public static final List<String> animals = List.of(
+    public static final List<String> colors = List.of(
             "alabastrowy",
             "bialy",
             "kremowy",
@@ -57,7 +57,7 @@ public class NiceIdGenerator {
             "purpurowy",
             "blekitny"
     );
-    public static final List<String> colors = List.of(
+    public static final List<String> animals = List.of(
             "aligator",
             "borsuk",
             "nietoperz",

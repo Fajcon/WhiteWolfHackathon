@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {FindDoktorModalComponent} from './find-doktor-modal/find-doktor-modal.component';
+import {ContinueConversationComponent} from './continue-conversation/continue-conversation.component';
 
 @Component({
   selector: 'app-home',
@@ -21,5 +22,12 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  continueConversationPopUp() {
+    const dialogRef = this.dialog.open(ContinueConversationComponent, {
+      width: '500px',
+      data: 'cos'
+    });
   }
 }

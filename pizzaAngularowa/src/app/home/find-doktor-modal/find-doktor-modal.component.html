@@ -1,6 +1,5 @@
 <h1 mat-dialog-title>Cześć :) <br> Chciałbyś porozmawiać?</h1>
-<form [formGroup]="askDoctor">
-</form>
+
 <div mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="submit()">Zapytaj</button>
+  <a mat-raised-button color="primary" routerLink="/chat" (click)="submit()">Zapytaj</a>
 </div>

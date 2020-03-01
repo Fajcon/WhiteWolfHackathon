@@ -1,0 +1,61 @@
+.chatList{
+  list-style: none;
+}
+
+.messageContainer{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  width: 60%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  clear: both;
+  overflow: scroll;
+  max-height: 666px;
+}
+.userMessageBox{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  float: right;
+  max-width: 80%;
+  word-wrap: break-word;
+
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #ddd;
+}
+
+.messageBox{
+  width: 100%;
+  word-wrap: break-word;
+  float: right;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.serverMessageBox{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  max-width: 80%;
+  word-wrap: break-word;
+  float: left;
+
+}
+
+.writeMessage{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  word-wrap: break-word;
+  float: right;
+}

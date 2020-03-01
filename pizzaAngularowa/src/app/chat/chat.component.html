@@ -1,7 +1,7 @@
 
 <div class="messageContainer" id="xxx" fxLayout="column" >
 <!--  fxLayoutAlign="space-around center"-->
-  <div>
+  <div [hidden]="!twojeHaslo" >
     Twoje hasło do konwersacji, zapamiętaj je albo zapisz: {{twojeHaslo}}
   </div>
   <ul class = "chatList">

@@ -20,4 +20,11 @@ public class Doctor {
     private String content;
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     private List<Chat> chats;
+
+    public Doctor(String title, String subtitle, String image, String content) {
+        this.title = title;
+        this.subtitle = subtitle;
+        this.image = image;
+        this.content = content;
+    }
 }

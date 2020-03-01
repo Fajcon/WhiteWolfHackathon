@@ -15,7 +15,7 @@ public class MocksController {
 
     @GetMapping("makeMocks")
     public void makeMocks(){
-        doctorRepository.save(new Doctor("lek. Piotr Gdziebył", "psychiatra", "https://gfx.chillizet.pl/var/chillizet/storage/images/news/pracuje-w-szpitalu-i-jest-gwiazda-internetu-doktor-mike-to-najprzystojniejszy-lekarz-na-swiecie-14487/1305472-1-pol-PL/Pracuje-w-szpitalu-i-jest-gwiazda-internetu.-Doktor-Mike-to-najprzystojniejszy-lekarz-na-swiecie_article.jpg", "H"));
+        doctorRepository.save(new Doctor("lek. Piotr Gdziebył", "psychiatra", "https://ocdn.eu/pulscms-transforms/1/ro8k9kuTURBXy9kOTYzYjViNS1iOTJlLTQ1MWItYmZjZi01MzQ5YzYxNzBjYjguanBlZ5GVAs0DBwDDw4GhMAE", "H"));
         doctorRepository.save(new Doctor("dr n. med. Jan Nowak", "psychiatra, psychoterapeuta", "https://www.dts24.pl/wp-content/uploads/2017/01/Doktor-Malinowski-maly.jpg", "He"));
         doctorRepository.save(new Doctor("lek. Zbigniew Tambył", "psychiatra, seksuolog", "https://gww.pl/media/cache/60/66/60660f6802da568173454291c12f9ace.jpg", "Li"));
         doctorRepository.save(new Doctor("lek. Agnieszka Zając", "psychiatra, psychoterapeuta", "https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/default/0001/91/anna-makowska-doktor-ania.jpeg", "Be"));

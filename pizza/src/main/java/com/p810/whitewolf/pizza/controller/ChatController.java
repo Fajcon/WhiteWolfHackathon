@@ -25,8 +25,8 @@ public class ChatController {
     }
 
     @GetMapping("/allMessages/{doctorId}")
-    AllChatsResponse allMessages(@PathVariable(name = "doctorId") String doctorId){
-        return new AllChatsResponse(doctorRepository.findById(NiceIdGenerator.toLong(doctorId))
+    AllChatsResponse allMessages(@PathVariable(name = "doctorId") Long doctorId){
+        return new AllChatsResponse(doctorRepository.findById(doctorId)
                 .orElseThrow());
     }
 

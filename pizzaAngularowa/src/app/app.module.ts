@@ -11,7 +11,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
 import {DoctorComponent} from './doctor/doctor.component';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatTableModule,
+    MatToolbarModule
+} from '@angular/material';
 import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-modal.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
@@ -49,33 +57,34 @@ const appRoutes: Routes = [
     ContinueConversationComponent,
     ChatDoctorComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      {enableTracing: true} // <-- debugging purposes only
-    ),
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    FormsModule,
-    FlexLayoutModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatInputModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    HttpClientModule,
-    MatCardModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(
+            appRoutes,
+            {enableTracing: true} // <-- debugging purposes only
+        ),
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        FormsModule,
+        FlexLayoutModule,
+        MatInputModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatInputModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        HttpClientModule,
+        MatCardModule,
+        MatTableModule
+    ],
   providers: [
     {
       provide: MatDialogRef,

@@ -8,13 +8,14 @@ import {MainHeaderComponent} from './main-header/main-header.component';
 import {MainFooterComponent} from './main-footer/main-footer.component';
 import {ListOfDoctorsComponent} from './list-of-doctors/list-of-doctors.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatRadioModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
+import {DoctorComponent} from './doctor/doctor.component';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-modal.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
-import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     MainFooterComponent,
     ListOfDoctorsComponent,
     ChatComponent,
-    FindDoktorModalComponent
+    FindDoktorModalComponent,
+    DoctorComponent
   ],
   imports: [
     BrowserModule,
@@ -45,16 +47,25 @@ const appRoutes: Routes = [
       {enableTracing: true} // <-- debugging purposes only
     ),
     BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    FlexLayoutModule,
+    MatInputModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
     MatDialogModule,
-    MatRadioModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [
     {

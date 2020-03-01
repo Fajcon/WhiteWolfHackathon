@@ -13,14 +13,13 @@ import java.util.List;
 @AllArgsConstructor
 public class Chat {
     @Id
-    private String chatId;
+    private Long chatId;
     @ManyToOne
     private Doctor doctor;
     @OneToMany(mappedBy = "chat", cascade = CascadeType.ALL)
     private List<ChatMessage> messages;
 
     public Chat(Doctor doctor) {
-        this.chatId = chatId;
         this.doctor = doctor;
     }
 }

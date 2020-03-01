@@ -1,5 +1,6 @@
 package com.p810.whitewolf.pizza.controller;
 
+import com.p810.whitewolf.pizza.config.NiceIdGenerator;
 import com.p810.whitewolf.pizza.model.Chat;
 import com.p810.whitewolf.pizza.model.ChatMessage;
 import com.p810.whitewolf.pizza.repositories.ChatRepository;
@@ -26,6 +27,7 @@ public class ChatController {
 
     @GetMapping("/messages/{chatId}")
     List<ChatMessage> allMessages(@PathVariable(name = "chatId") String chatId){
+        Long id = NiceIdGenerator.toLong(chatId);
         return chatRepository.findById(chatId)
                 .orElseThrow()
                 .getMessages()

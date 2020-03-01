@@ -5,11 +5,23 @@ import org.hibernate.id.enhanced.SequenceStyleGenerator;
 import java.util.List;
 
 public class NiceIdGenerator {
-    List<String> things = List.of(
-      "Mis",
-      "Pies",
-      "Kot",
-      "Zaba"
+    List<String> przymiotniki = List.of();
+    List<String> animals = List.of(
+            "Mis",
+            "Pies",
+            "Kot",
+            "Zaba",
+            "Pszczola",
+            "Krolik",
+            "Malpa"
+    );
+    List<String> colors = List.of(
+            "Bialy",
+            "Czerwony",
+            "Zielony",
+            "Pomaranczowy",
+            "Rozowy",
+            ""
     );
 
     public static Long toLong(String chatId) {

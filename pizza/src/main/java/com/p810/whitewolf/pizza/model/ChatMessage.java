@@ -18,4 +18,5 @@ public class ChatMessage {
     private Chat chat;
     private String body;
     private Timestamp timestamp;
+    private boolean sentByDoctor;
 }

@@ -2,38 +2,32 @@ package com.p810.whitewolf.pizza.controller;
 
 import com.p810.whitewolf.pizza.config.NiceIdGenerator;
 import com.p810.whitewolf.pizza.model.Chat;
-import com.p810.whitewolf.pizza.model.ChatMessage;
 import com.p810.whitewolf.pizza.repositories.ChatRepository;
+import com.p810.whitewolf.pizza.repositories.DoctorRepository;
 import com.p810.whitewolf.pizza.repositories.MessageRepository;
+import com.p810.whitewolf.pizza.responses.AllChatsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-
 @RestController
 public class ChatController {
+    private DoctorRepository doctorRepository;
     private ChatRepository chatRepository;
     private MessageRepository messageRepository;
 
     @Autowired
-    public ChatController(ChatRepository chatRepository, MessageRepository messageRepository) {
+    public ChatController(DoctorRepository doctorRepository, ChatRepository chatRepository, MessageRepository messageRepository) {
+        this.doctorRepository = doctorRepository;
         this.chatRepository = chatRepository;
         this.messageRepository = messageRepository;
     }
 
-    @GetMapping("/messages/{chatId}")
-    List<ChatMessage> allMessages(@PathVariable(name = "chatId") String chatId){
-        Long id = NiceIdGenerator.toLong(chatId);
-        return chatRepository.findById(chatId)
-                .orElseThrow()
-                .getMessages()
-                .stream()
-                .sorted(Comparator.comparing(ChatMessage::getTimestamp))
-                .collect(Collectors.toList());
+    @GetMapping("/allMessages/{doctorId}")
+    AllChatsResponse allMessages(@PathVariable(name = "doctorId") String doctorId){
+        return new AllChatsResponse(doctorRepository.findById(NiceIdGenerator.toLong(doctorId))
+                .orElseThrow());
     }
 
     @GetMapping("/chat/new")

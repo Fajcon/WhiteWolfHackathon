@@ -12,6 +12,7 @@ import {MatButtonModule, MatFormFieldModule, MatCardModule, MatIconModule, MatTo
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-modal.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -46,14 +47,14 @@ const appRoutes: Routes = [
       {enableTracing: true} // <-- debugging purposes only
     ),
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
     FlexLayoutModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatRadioModule,

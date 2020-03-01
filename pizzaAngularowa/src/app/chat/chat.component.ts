@@ -2,6 +2,8 @@ import {Component, NgZone, ViewChild} from '@angular/core';
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 import {Message} from '../data/message';
+import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {take} from 'rxjs/operators';
 
 @Component({
   selector: 'app-chat',
@@ -9,7 +11,6 @@ import {Message} from '../data/message';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent {
-
 
   private stompClient;
   private value = '';
@@ -49,5 +50,3 @@ export class ChatComponent {
   }
 
 }
-
-

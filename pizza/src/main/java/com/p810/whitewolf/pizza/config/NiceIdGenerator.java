@@ -112,9 +112,9 @@ public class NiceIdGenerator {
 
     public static Long toLong(String chatId) {
         for (int i = 0; i < colors.size(); i++) {
-            if (chatId.contains(colors.get(i))) {
+            if (chatId.startsWith(colors.get(i))) {
                 for (int j = 0; j < animals.size(); j++) {
-                    if (chatId.contains(animals.get(j))){
+                    if (chatId.endsWith(animals.get(j))){
                         return (long) (j + i * animals.size());
                     }
                 }

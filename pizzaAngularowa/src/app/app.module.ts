@@ -8,14 +8,12 @@ import {MainHeaderComponent} from './main-header/main-header.component';
 import {MainFooterComponent} from './main-footer/main-footer.component';
 import {ListOfDoctorsComponent} from './list-of-doctors/list-of-doctors.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ChatComponent} from './chat/chat.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {DoctorComponent} from './doctor/doctor.component';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { FindDoktorModalComponent } from './home/find-doktor-modal/find-doktor-modal.component';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
-import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -39,7 +37,8 @@ const appRoutes: Routes = [
     MainFooterComponent,
     ListOfDoctorsComponent,
     ChatComponent,
-    FindDoktorModalComponent
+    FindDoktorModalComponent,
+    DoctorComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +48,7 @@ const appRoutes: Routes = [
     ),
     BrowserAnimationsModule,
     FlexLayoutModule,
+    MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
@@ -61,10 +61,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    MatSelectModule
-    MatCardModule,
     MatDialogModule,
-    MatRadioModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     HttpClientModule

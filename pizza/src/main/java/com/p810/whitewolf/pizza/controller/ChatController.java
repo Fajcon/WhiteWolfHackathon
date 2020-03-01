@@ -24,6 +24,11 @@ public class ChatController {
         this.messageRepository = messageRepository;
     }
 
+    @GetMapping("/zwierzatkadolonga/{niceId}")
+    Long niceToLong(@PathVariable(name = "niceId") String niceId){
+        return NiceIdGenerator.toLong(niceId);
+    }
+
     @GetMapping("/allMessages/{doctorId}")
     AllChatsResponse allMessages(@PathVariable(name = "doctorId") Long doctorId){
         return new AllChatsResponse(doctorRepository.findById(doctorId)

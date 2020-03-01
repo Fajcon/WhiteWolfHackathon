@@ -17,6 +17,7 @@ import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LogInComponent} from './main-header/log-in/log-in.component';
+import { ContinueConversationComponent } from './home/continue-conversation/continue-conversation.component';
 
 const appRoutes: Routes = [
   {path: 'list-of-doctors', component: ListOfDoctorsComponent},
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     ChatComponent,
     FindDoktorModalComponent,
     DoctorComponent,
-    LogInComponent
+    LogInComponent,
+    ContinueConversationComponent
   ],
   imports: [
     BrowserModule,

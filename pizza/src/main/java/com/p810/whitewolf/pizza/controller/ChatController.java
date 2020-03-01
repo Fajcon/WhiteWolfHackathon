@@ -2,6 +2,7 @@ package com.p810.whitewolf.pizza.controller;
 
 import com.p810.whitewolf.pizza.config.NiceIdGenerator;
 import com.p810.whitewolf.pizza.model.Chat;
+import com.p810.whitewolf.pizza.model.ChatMessage;
 import com.p810.whitewolf.pizza.repositories.ChatRepository;
 import com.p810.whitewolf.pizza.repositories.DoctorRepository;
 import com.p810.whitewolf.pizza.repositories.MessageRepository;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -43,7 +45,7 @@ public class ChatController {
     }
 
     @GetMapping("/chatMessages/{chatId}")
-    List<MessagesResponse> messegesForChat(@PathVariable(name = "chatId") String chatId){
+    List<MessagesResponse> messegesForChat(@PathVariable(name = "chatId") Long chatId){
         return chatRepository.findById(chatId)
                 .orElseThrow()
                 .getMessages()
@@ -56,5 +58,13 @@ public class ChatController {
     @GetMapping("/chat/new")
     Long newChat() {
         return chatRepository.save(new Chat()).getChatId();
+    }
+
+    @GetMapping("/addMessage/{message}&{conversationId}&{sentByDoctor}")
+    Long addMessage(@PathVariable(name = "message") String message, @PathVariable(name = "conversationId") Long conversationId,
+                    @PathVariable(name = "sentByDoctor") Boolean sentByDoctor) {
+        Chat chat = chatRepository.findById(conversationId).orElseThrow();
+        chat.getMessages().add(new ChatMessage(chat, message, new Timestamp(System.currentTimeMillis()), sentByDoctor));
+        return chatRepository.save(chat).getChatId();
     }
 }

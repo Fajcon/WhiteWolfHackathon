@@ -1,7 +1,4 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import * as SockJS from 'sockjs-client';
-import * as Stomp from 'stompjs';
-import {Message} from '../data/message';
 import {ConversationServices} from '../services/conversationServices';
 import {ActivatedRoute} from '@angular/router';
 
@@ -12,12 +9,11 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ChatComponent {
 
-  private stompClient;
   private value = '';
   private chatMessage = '';
   messages = [];
-  container: any;
   private id: string;
+  private sentByDoctor = false;
 
   constructor(private conversationServices: ConversationServices, private route: ActivatedRoute) {
     this.route.paramMap.subscribe(params => {
@@ -28,23 +24,26 @@ export class ChatComponent {
             this.id = id;
             this.getMessages(this.id);
           });
-      }
+        }
+      this.getMessages(this.id);
     });
   }
 
   getMessages(id) {
-    this.conversationServices.getChatMessages(id).subscribe();
+    this.conversationServices.getChatMessages(id).subscribe(msg => {
+      this.messages = [];
+      msg.forEach(m => this.messages.push(m));
+    });
   }
 
   sendMessage(message) {
-    if( message.length > 0){
-      this.messages.push(new Message(true, message));
-      console.log(this.messages);
-      this.stompClient.send('secured/user/queue/specific-user', {}, message);
+    if (message.length > 0) {
+      this.conversationServices.addNewMessage(message, this.id, this.sentByDoctor).subscribe(
+        asd => {
+          this.getMessages(this.id);
+        }
+      );
       this.chatMessage = '';
-      this.messages.push(new Message(false, message));
-      this.container = document.getElementById('xxx');
-      this.container.scrollTop = this.container.scrollHeight;
     }
   }
 

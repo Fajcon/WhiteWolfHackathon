@@ -9,7 +9,6 @@ import {ConversationServices} from '../../services/conversationServices';
 })
 export class FindDoktorModalComponent implements OnInit {
   askDoctor: any;
-
   constructor(public dialogRef: MatDialogRef<FindDoktorModalComponent>, @Inject(MAT_DIALOG_DATA) public doctorId: string,
               private conversationServices: ConversationServices) {
   }

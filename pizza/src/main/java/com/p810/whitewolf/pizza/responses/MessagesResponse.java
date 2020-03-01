@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 public class MessagesResponse {
-    String message;
-    boolean sentByDoctor = true;
+    String body;
+    boolean sentByDoctor;
 
     public MessagesResponse(ChatMessage chatMessage) {
-        message = chatMessage.getBody();
+        body = chatMessage.getBody(); sentByDoctor = chatMessage.isSentByDoctor();
     }
 }

@@ -4,9 +4,8 @@
   <ul class = "chatList">
     <li *ngFor="let message of messages">
       <br/>
-      <div *ngIf="message.isMe"><div class="messageBox"><div class="userMessageBox">{{message.text}}</div></div></div>
-      <div *ngIf="!message.isMe"><div class="messageBox"><div class="serverMessageBox">
-        zabij sie</div></div></div>
+      <div *ngIf="message.sentByDoctor"><div class="messageBox"><div class="userMessageBox">{{message.body}}</div></div></div>
+      <div *ngIf="!message.sentByDoctor"><div class="messageBox"><div class="serverMessageBox">{{message.body}}</div></div></div>
     </li>
   </ul>
   <div class="writeMessage">

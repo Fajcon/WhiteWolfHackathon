@@ -1,9 +1,9 @@
 export class Message {
-  constructor(isMe: boolean, text: any) {
-    this.text = text;
-    this.isMe = isMe;
+  constructor(sentbydoctor: boolean, body: any) {
+    this.body = body;
+    this.sentByDoctor = sentbydoctor;
   }
 
-  isMe: boolean;
-  text: string;
+  sentByDoctor: boolean;
+  body: string;
 }

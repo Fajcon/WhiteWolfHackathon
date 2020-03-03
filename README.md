@@ -9,7 +9,7 @@ Teens are often ashamed of their problems and they don't know where to look for 
 We tried to create a platform for anonymous chat with specialists. 
 You dont have to crate usser account, only what you need to continue conversasion with you psychologist is auto generate conversation code.
 
-#Technologies
+# Technologies
 * Java 13
 * Spring Boot
 * Angular

@@ -1,5 +1,5 @@
 # WhiteWolfHackathon
-Application created during the hackathon 24h 29/02/2020 - 1/03/2020.
+Application created during the 24h hackathon 29/02/2020 - 1/03/2020.
 
 # Idea
 The idea was born when we thought about the problem of psychological help for young people. 
